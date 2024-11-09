@@ -1,4 +1,4 @@
- import streamlit as st
+import streamlit as st
 from scholarly import scholarly
 import time
 
@@ -24,7 +24,7 @@ def search_research_areas_google_scholar(researcher_name):
 st.markdown("<h1 style='color: navy;'>Exploring Research Interests of Scholars on Google Scholar</h1>", unsafe_allow_html=True)
 
 # Input for multiple researcher names separated by commas
-researcher_names = st.text_input("Enter the names of researchers on Google Scholar, separated by commas:")
+researcher_names = st.text_input("Enter the names of scholars on Google Scholar, separated by commas:")
 
 if st.button("Search"):
     if researcher_names:
@@ -39,8 +39,9 @@ if st.button("Search"):
                 # Add a 2-second interval between searches
                 time.sleep(2)
     else:
-        st.warning("Please enter at least one researcher's name.")
+        st.warning("Please enter at least one scholar's name.")
 
 # Add signature at the end in navy blue
 st.markdown("<p style='color: navy;'>Tool developed by: Darliane Cunha</p>", unsafe_allow_html=True)
+
 
