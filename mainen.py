@@ -1,5 +1,6 @@
-import streamlit as st
+ import streamlit as st
 from scholarly import scholarly
+import time
 
 def search_research_areas_google_scholar(researcher_name):
     try:
@@ -20,16 +21,26 @@ def search_research_areas_google_scholar(researcher_name):
         return [f"Error retrieving research areas: {e}"]
 
 # Streamlit Interface
-st.title("Exploring Research Interests of Scholars on Google Scholar")
-st.markdown("<p style='color: navy;'>Developed by: Darliane Cunha</p>", unsafe_allow_html=True)
-researcher_name = st.text_input("Enter the researcher's name on Google Scholar:")
+st.markdown("<h1 style='color: navy;'>Exploring Research Interests of Scholars on Google Scholar</h1>", unsafe_allow_html=True)
+
+# Input for multiple researcher names separated by commas
+researcher_names = st.text_input("Enter the names of researchers on Google Scholar, separated by commas:")
 
 if st.button("Search"):
-    if researcher_name:
+    if researcher_names:
         with st.spinner("Searching..."):
-            research_areas = search_research_areas_google_scholar(researcher_name)
-        st.subheader("Found Research Areas:")
-        for area in research_areas:
-            st.write(f"- {area}")
+            # Split the list of names and remove extra spaces
+            names_list = [name.strip() for name in researcher_names.split(",")]
+            for name in names_list:
+                st.subheader(f"Research areas for: {name}")
+                research_areas = search_research_areas_google_scholar(name)
+                for area in research_areas:
+                    st.write(f"- {area}")
+                # Add a 2-second interval between searches
+                time.sleep(2)
     else:
-        st.warning("Please enter the researcher's name.")
+        st.warning("Please enter at least one researcher's name.")
+
+# Add signature at the end in navy blue
+st.markdown("<p style='color: navy;'>Tool developed by: Darliane Cunha</p>", unsafe_allow_html=True)
+
