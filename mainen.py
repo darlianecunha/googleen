@@ -20,7 +20,7 @@ def search_research_areas_google_scholar(researcher_name):
         return [f"Error retrieving research areas: {e}"]
 
 # Streamlit Interface
-st.title("Researcher Interest Areas Search on Google Scholar")
+st.title("Exploring Research Interests of Scholars on Google Scholar")
 st.markdown("<p style='color: navy;'>Developed by: Darliane Cunha</p>", unsafe_allow_html=True)
 researcher_name = st.text_input("Enter the researcher's name on Google Scholar:")
 
