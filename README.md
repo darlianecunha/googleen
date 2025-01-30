@@ -1,6 +1,6 @@
 # Research Areas Search on Google Scholar
 
-This project is an interactive application developed with **Streamlit** and the **Scholarly** library, designed to search for research areas associated with researchers on **Google Scholar**. It simplifies the process of collecting academic information in an automated and user-friendly manner.
+This app is designed to simplify searches on Google Scholar by allowing you to explore the research areas of multiple scholars at once. Just enter their names separated by commas, and the app does the rest.
 
 ## Features
 - Search for research areas of specific researchers by entering their names on Google Scholar, separated by commas.
