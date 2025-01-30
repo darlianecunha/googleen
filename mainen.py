@@ -42,6 +42,6 @@ if st.button("Search"):
         st.warning("Please enter at least one scholar's name.")
 
 # Add signature at the end in navy blue
-st.markdown("<p style='color: navy;'>Tool developed by: Darliane Cunha</p>", unsafe_allow_html=True)
+st.markdown("<p style='color: navy;'>Tool developed by: Darliane Cunha.</p>", unsafe_allow_html=True)
 
 
